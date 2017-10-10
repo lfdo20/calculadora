@@ -1,0 +1,55 @@
+.calc {
+  position: relative;
+  background-color: gray;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  margin-top: 80px;
+  padding: 5px 5px;
+}
+
+.keyboard{
+  margin: 0 auto;
+}
+
+.keyboard > div {
+  position: relative;
+  display: inline-block;
+  background-color: blue;
+  width: 50px;
+  height: 50px;
+  margin: 5px 5px;
+  cursor: pointer;
+
+}
+
+
+
+.keyboard > div > h1 {
+  margin: 15% 30%;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+.vis {
+  position: relative;
+  width: 400px;
+  height: 60px;
+  background-color: green;
+
+  font-size: 20px;
+  margin:  20px auto;
+}
+
+.ac > h1{
+  font-size: 18px;
+}
+
+.vise{
+  color: red;
+  margin-top: 5px;
+  margin-right: 7px;
+
+}
