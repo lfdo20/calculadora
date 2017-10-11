@@ -11,8 +11,9 @@ src: local('DSEG14 Classic-Bold Italic'), url('DSEG14Classic-BoldItalic.woff') f
   height: 550px;
   margin: 0 auto;
   margin-top: 150px;
-  border-radius: 5px;
-  border-radius:  15px  5px 15px 0;
+  border-radius:  25px  0px 25px 0;
+
+  box-shadow: 10px 10px 25px 1px rgba(0, 0, 0, .3);
 }
 
 .numerico{

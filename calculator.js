@@ -65,27 +65,27 @@ function calc(){
       }
       else {
         // teste para verificar se já existe um cálculo ou valor inicial
-        if (result === 0 && fvalue === 0){
-          fvalue = parseFloat((tempvalue*decimal).toFixed(2));
+        if (result === 0 && fvalue === 0 || decimal === 0.1){
+          fvalue = parseFloat(((tempvalue*decimal)+fvalue).toFixed(2));
           decimal =1;
           console.log(fvalue);
           $('.numero').html(fvalue);
           return;
-        }// não existe calculo anterior e é primeiro valor
-        else if (result === 0 && fvalue !== 0 && operator === 0){
-          fvalue = (fvalue*10) + tempvalue;
+        }// não existe calculo anterior e é primeiro valor ou decimal
+        else if (result === 0 && fvalue !== 0 && operator === 0 && decimal !==0.1){
+          fvalue = (fvalue*10) + parseFloat((tempvalue*decimal).toFixed(2));
           $('.numero').html(fvalue);
           console.log(fvalue, 'eita');
         }// já existe um primeiro número
-        else if(result === 0 && fvalue !== 0 && operator !== 0 ){
-          nvalue = parseFloat((tempvalue*decimal).toFixed(2));
+        else if(result === 0 && fvalue !== 0 && nvalue === 0 && operator !== 0 || decimal ===0.1 ){
+          nvalue = parseFloat((tempvalue*decimal+nvalue).toFixed(2));
           decimal=1;
           $('.numero').html(nvalue);
           console.log(nvalue);
-        }// não existe calculo anterior e é o segundo valor
-        else if (result === 0 && fvalue !== 0 && operator === 0){
-          fvalue = (fvalue*10) + tempvalue;
-          $('.numero').html(fvalue);
+        }// não existe calculo anterior e é o segundo valor ou decimal
+        else if (result === 0 && fvalue !== 0 && nvalue !== 0 && operator !== 0 && decimal !==0.1){
+          nvalue = (nvalue*10) + parseFloat((tempvalue*decimal).toFixed(2));
+          $('.numero').html(nvalue);
           console.log(fvalue, 'eita');
         }// já existe um primeiro número
         else if (result !== 0 && nvalue === 0){
@@ -93,11 +93,10 @@ function calc(){
           nvalue = parseFloat((tempvalue*decimal).toFixed(2));
           $('.numero').html(nvalue);
           console.log(fvalue,nvalue);
-
         }// existe calculo anterior
         else if (result !== 0 && nvalue !== 0 && decimal === 1){
           fvalue = result;
-          nvalue = (nvalue*10) +tempvalue;
+          nvalue = (nvalue*10) +parseFloat((tempvalue*decimal).toFixed(2));
           $('.numero').html(nvalue);
           console.log(fvalue,nvalue);
         }
