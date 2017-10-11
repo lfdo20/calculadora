@@ -10,35 +10,34 @@ $('.key').on('mouseleave',function(){
   $(this).css({ 'backgroundColor' : '#17172E'});
 });
 
-
-
-
 function calc(){
   switch (operator) {
       case '+':
-        result = fvalue + nvalue;
-        $('.numero').html(result);
+        result = parseFloat((fvalue + nvalue).toFixed(1));
+        if (result > 99999){  $('.numero').html('erro');}
+        else{ $('.numero').html(result);}
         console.log(result);
         break;
       case '-':
-        result = fvalue - nvalue;
-        $('.numero').html(result);
+        result = parseFloat((fvalue - nvalue).toFixed(1));
+        if (result > 99999){  $('.numero').html('erro');}
+        else{ $('.numero').html(result);}
         console.log(result);
         break;
       case '/':
-        result = fvalue / nvalue;
-        $('.numero').html(result);
+        result = parseFloat((fvalue / nvalue).toFixed(1));
+        if (result > 99999){  $('.numero').html('erro');}
+        else{ $('.numero').html(result);}
         console.log(result);
         break;
       case '*':
-        result = fvalue * nvalue;
-        $('.numero').html(result);
+        result = parseFloat((fvalue * nvalue).toFixed(1));
+        if (result > 99999){  $('.numero').html('erro');}
+        else{ $('.numero').html(result);}
         console.log(result);
         break;
   }
 }
-
-
 
   $('.key').click(function(){
 
@@ -67,14 +66,19 @@ function calc(){
       else {
         // teste para verificar se já existe um cálculo ou valor inicial
         if (result === 0 && fvalue === 0){
-          fvalue = parseFloat((tempvalue*decimal).toFixed(2) );
+          fvalue = parseFloat((tempvalue*decimal).toFixed(2));
           decimal =1;
           console.log(fvalue);
           $('.numero').html(fvalue);
           return;
         }// não existe calculo anterior e é primeiro valor
+        else if (result === 0 && fvalue !== 0 && operator === 0){
+          fvalue = (fvalue*10) + tempvalue;
+          $('.numero').html(fvalue);
+          console.log(fvalue, 'eita');
+        }// já existe um primeiro número
         else if(result === 0 && fvalue !== 0 && operator !== 0 ){
-          nvalue = parseFloat((tempvalue*decimal).toFixed(2) );
+          nvalue = parseFloat((tempvalue*decimal).toFixed(2));
           decimal=1;
           $('.numero').html(nvalue);
           console.log(nvalue);
@@ -84,10 +88,9 @@ function calc(){
           $('.numero').html(fvalue);
           console.log(fvalue, 'eita');
         }// já existe um primeiro número
-
         else if (result !== 0 && nvalue === 0){
           fvalue = result;
-          nvalue = parseFloat((tempvalue*decimal).toFixed(2) );
+          nvalue = parseFloat((tempvalue*decimal).toFixed(2));
           $('.numero').html(nvalue);
           console.log(fvalue,nvalue);
 
@@ -99,21 +102,11 @@ function calc(){
           console.log(fvalue,nvalue);
         }
       }
-
-
-
-
-
-
 });
 
 $('.result').click(function(){
   calc();
   tempvalue =0; nvalue =0; fvalue =0; operator=0; decimal =1;
   console.log("r:"+result, "tenp:"+tempvalue, "nv:"+nvalue, "fv:"+fvalue, "op"+operator);
-
-
-
 });
-
 });
