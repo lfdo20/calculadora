@@ -3,9 +3,17 @@ $('document').ready(function(){
 var operator=0; var fvalue=0; var nvalue=0; var tempvalue =0;
 var result=0; var decimal =1;
 
-function calc(){
-  console.log(fvalue,operator,nvalue);
+$('.key').hover(function(){
+  $(this).css({ 'backgroundColor' : '#212141'});
+});
+$('.key').on('mouseleave',function(){
+  $(this).css({ 'backgroundColor' : '#17172E'});
+});
 
+
+
+
+function calc(){
   switch (operator) {
       case '+':
         result = fvalue + nvalue;
@@ -27,9 +35,7 @@ function calc(){
         $('.numero').html(result);
         console.log(result);
         break;
-}
-
-
+  }
 }
 
 
@@ -61,14 +67,14 @@ function calc(){
       else {
         // teste para verificar se já existe um cálculo ou valor inicial
         if (result === 0 && fvalue === 0){
-          fvalue = parseFloat( (tempvalue*decimal).toFixed(2) );
+          fvalue = parseFloat((tempvalue*decimal).toFixed(2) );
           decimal =1;
           console.log(fvalue);
           $('.numero').html(fvalue);
           return;
         }// não existe calculo anterior e é primeiro valor
         else if(result === 0 && fvalue !== 0 && operator !== 0 ){
-          nvalue = parseFloat( (tempvalue*decimal).toFixed(2) );
+          nvalue = parseFloat((tempvalue*decimal).toFixed(2) );
           decimal=1;
           $('.numero').html(nvalue);
           console.log(nvalue);
@@ -81,7 +87,7 @@ function calc(){
 
         else if (result !== 0 && nvalue === 0){
           fvalue = result;
-          nvalue = parseFloat( (tempvalue*decimal).toFixed(2) );
+          nvalue = parseFloat((tempvalue*decimal).toFixed(2) );
           $('.numero').html(nvalue);
           console.log(fvalue,nvalue);
 
