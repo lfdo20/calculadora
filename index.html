@@ -4,80 +4,83 @@
     <meta charset="utf-8">
     <title>Calculadora</title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
+<!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>-->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
     <link rel="stylesheet" type="text/css" href="calculator.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="calculator.js"></script>
-    <link href='https://fonts.googleapis.com/css?family=Encode Sans' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Orbitron" />
 </head>
   <body>
     <div class="calc">
       <div class="vis">
-
-
-
-        <h1 class="numero">Hallo</h1>
-
+        <span class="numero">Hallo</span>
       </div>
 
-      <div class="keyboard">
-      <div class="key num1" data-value="1">
+      <div class="keyboard operadorestop">
+        <span class="key ac" data-value="reset">
+          <h1>AC</h1>
+        </span>
+        <span class="key op-" data-value="-">
+          <h1><i class="fa fa-minus" aria-hidden="true"></i></h1>
+        </span>
+        <span class="key op/" data-value="/">
+          <h1 class="hi">/</h1>
+        </span>
+        <span class="key op*" data-value="*">
+          <h1><i class="fa fa-asterisk" aria-hidden="true"></i><h1>
+        </span>
+      </div>
+
+      <div class="sector">
+    <div class="keyboard numerico">
+      <span class="key num1" data-value="1">
         <h1>1</h1>
-      </div>
-      <div class="key num2" data-value="2">
+      </span>
+      <span class="key num2" data-value="2">
         <h1>2</h1>
-      </div>
-      <div class="key num3" data-value="3">
+      </span>
+      <span class="key num3" data-value="3">
         <h1>3</h1>
-      </div>
-      <div class="key num4" data-value="4">
+      </span>
+      <span class="key num4" data-value="4">
         <h1>4</h1>
-      </div>
-      <div class="key num5" data-value="5">
+      </span>
+      <span class="key num5" data-value="5">
         <h1>5</h1>
-      </div>
-      <div class="key num6" data-value="6">
+      </span>
+      <span class="key num6" data-value="6">
         <h1>6</h1>
-      </div>
-      <div class="key num7" data-value="7">
+      </span>
+      <span class="key num7" data-value="7">
         <h1>7</h1>
-      </div>
-      <div class="key num8" data-value="8">
+      </span>
+      <span class="key num8" data-value="8">
         <h1>8</h1>
-      </div>
-      <div class="key num9" data-value="9">
+      </span>
+      <span class="key num9" data-value="9">
         <h1>9</h1>
-      </div>
-      <div class="key num0" data-value="0">
+      </span>
+      <span class="key num0" data-value="0">
         <h1>0</h1>
-      </div>
-
-      <div class="key op+" data-value="+">
-        <h1>+</h1>
-      </div>
-      <div class="key op-" data-value="-">
-        <h1>-</h1>
-      </div>
-      <div class="key op/" data-value="/">
-        <h1>/</h1>
-      </div>
-      <div class="key op*" data-value="*">
-        <h1>*</h1>
-      </div>
-      <div class="key ac" data-value="reset">
-        <h1>AC</h1>
-      </div>
-      <div class="result" data-value="=">
-        <h1>=</h1>
-      </div>
-      <div class="key ponto" data-value=".">
+      </span>
+      <span class="key ponto" data-value=".">
         <h1>.</h1>
-      </div>
+      </span>
     </div>
 
+    <div class="keyboard operadoresdir">
+      <span class="key opplus" data-value="+">
+        <h1 class="hi"><i class="fa fa-plus" aria-hidden="true"></i></h1>
+      </span>
+      <span class="result" data-value="=">
+        <h1 class="hi">=</i></h1>
+      </span>
+    </div>
+    </div>
     </div>
   </body>
 </html>
